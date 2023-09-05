@@ -86,38 +86,7 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE':'sql_server.pyodbc',
-#         'NAME': 'press_data_control',
-#         'USER': 'press_spvz',
-#         'PASSWORD': 'admin100',
-#         'HOST': 'SPBMSDB07',
-#         'PORT': '',
-#
-#         'OPTIONS': {
-#             'driver': 'ODBC Driver 17 for SQL Server',
-#             'unicode_results': 'True',
-#         }
-#         },
-#     'quality': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'quality',
-#         'HOST': 'SPBMSDB07',
-#         'PORT': '',
-#
-#         'OPTIONS': {
-#             'driver': 'ODBC Driver 17 for SQL Server',
-#             'unicode_results': 'True',
-#         }
-#     },
-# }
 
-# set this to False if you want to turn off pyodbc's connection pooling
-#DATABASE_CONNECTION_POOLING = False
-
-# Password validation
-# https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
