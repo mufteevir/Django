@@ -1,2 +1,1 @@
-# Django
-Learning and projects on Django
+Project for local industry swipe autorization control based on django
