@@ -1,0 +1,71 @@
+
+
+{% extends 'layout/basic2.html' %}
+
+{% block content %}
+<h2>обобщенная история</h2>
+
+<div class="container mb-3 mt-3 table-hover">
+     <table class="table table-striped table-bordered mydatatable" width="100" style="width:30%" >
+          <thead>
+               <tr>
+                <th>линия:</th>
+                <th>штамп:</th>
+                <th>мастер:</th>
+                <th>событие:</th>
+                <th>значение после:</th>
+                <th>значение до:</th>
+                <th>время:</th>
+               </tr>
+          </thead>
+          <tbody>
+               {% for i in its %}
+               <tr>
+                    <td>{{ i.lineid }}</td>
+                    <td>{{ i.diename }}</td>
+                    <td>{{ i.masterid }}</td>
+                    <td>{{ i.eventid }}</td>
+                    <td>{{ i.eventval0 }}</td>
+                    <td>{{ i.eventval1 }}</td>
+                    <td>{{ i.eventtime }}</td>
+               </tr>
+               {% endfor %}
+          </tbody>
+          <tfoot>
+               <tr>
+                <th>линия:</th>
+                <th>штамп:</th>
+                <th>мастер:</th>
+                <th>событие:</th>
+                <th>значение после:</th>
+                <th>значение до:</th>
+                <th>время:</th>
+               </tr>
+          </tfoot>
+
+     </table>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+                   var table = $('.mydatatable').DataTable();
+                   $('.mydatatable thead th').each( function () {
+                         var title = $(this).text();
+                         $(this).html('<input type="text" placeholder="Search '+title+'"/>');
+                   });
+                   table.columns().every( function() {
+                         var that = this;
+                         $('input', this.header() ).on( 'keyup change', function () {
+                              if (that.search() !== this.value ) {
+                                    that.search( this.value ).draw();
+                              }
+                         });
+                   });
+</script>
+{% endblock content %}

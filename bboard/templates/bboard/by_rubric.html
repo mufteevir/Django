@@ -1,0 +1,24 @@
+
+
+{% extends 'layout/basic.html' %}
+{% block title %}{{ current_rubric.name }}{% endblock %}
+
+{% block content %}
+<h2>Участок: {{ current_rubric.name }} </h2>
+<table rules="rows" border="1">
+    <tr>
+    <th>Фио мастера:</th>
+    <th>Номер карты:</th>
+    <th>Уровень доступа:</th>
+    <th>Регистрация:</th>
+   </tr>
+{% for mm in mms %}
+     <tr>
+     <td>{{ mm.UserLogin }}</td>
+     <td>{{ mm.cardNumber }}</td>
+     <td>{{ mm.accessLevel }}</td>
+     <td>{{ mm.published }}</td>
+     </tr>
+{% endfor %}
+</table>
+{% endblock %}

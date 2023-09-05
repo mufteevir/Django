@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+        <title>{% block title %}Главная{% endblock %}- История верификаций</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'changestory/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>История</h1>
+        </header>
+                <ul>
+                    <li><a href="{% url 'bboard:index' %}">Главная</a></li>
+                </ul>
+            <section>
+                {% block content %}
+                {% endblock  %}
+            </section>
+
+    </body>
+</html>
